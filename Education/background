@@ -1,0 +1,12 @@
+ <section id="background">
+      <h2>Background</h2>
+      <ul class="list">
+        
+        <li><span class="when">2017 – 2025</span><div><h3>Ph.D. in Blockchain Security </h3><p>Indian Institute of Science (IISc), Bangalore. Advisor: Prof. Joy Kuri. Thesis: <i> Enhancing Blockchain
+        Security and Efficiency: Solutions for Micropayments, Payment Channels, and IoT Applications</i></p></div></li>
+        <li><span class="when">2011 – 2013</span><div><h3>M.Tech. in CSE with specialization Information Security</h3><p>IIIT Gwalior, India</p></div></li>
+        <li><span class="when">2006 – 2010</span><div><h3>B.E. in CSE </h3><p>PES College of Engineering, India</p></div></li>
+      </ul>
+
+     
+    </section>
