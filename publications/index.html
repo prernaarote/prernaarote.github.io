@@ -12,37 +12,38 @@
             --conf:     #2b6cb0;   /* blue   */
             --poster:   #6b46c1;   /* purple */
         }
+
+        /* Coloured, underlined section headings */
         .pub-section h3 {
             display: inline-block;
             padding-bottom: 2px;
-            border-bottom: 3px solid currentColor;
             margin-top: 1.6em;
+            border-bottom: 3px solid;
         }
-        .pub-list { list-style: none; padding-left: 0; }
+        .pub-section.preprint h3 { color: var(--preprint); border-color: var(--preprint); }
+        .pub-section.journal  h3 { color: var(--journal);  border-color: var(--journal); }
+        .pub-section.conf     h3 { color: var(--conf);     border-color: var(--conf); }
+        .pub-section.poster   h3 { color: var(--poster);   border-color: var(--poster); }
+
+        /* Paper entries: black text, left-aligned, coloured vertical line */
+        .pub-list {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+            text-align: left;
+        }
         .pub-list li {
-            border-left: 4px solid currentColor;
-            padding: 6px 0 6px 12px;
+            color: #000;
+            text-align: left;
+            padding: 4px 0 4px 12px;
             margin-bottom: 12px;
+            border-left: 4px solid #ccc;
         }
-        .pub-list li > * { color: #222; }
-        .tag {
-            display: inline-block;
-            font-size: 0.72em;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            color: #fff !important;
-            background: currentColor;
-            border-radius: 3px;
-            padding: 1px 6px;
-            margin-right: 6px;
-            vertical-align: middle;
-        }
-        .tag span { color: #fff; }
-        .preprint { color: var(--preprint); }
-        .journal  { color: var(--journal); }
-        .conf     { color: var(--conf); }
-        .poster   { color: var(--poster); }
+        .pub-section.preprint .pub-list li { border-left-color: var(--preprint); }
+        .pub-section.journal  .pub-list li { border-left-color: var(--journal); }
+        .pub-section.conf     .pub-list li { border-left-color: var(--conf); }
+        .pub-section.poster   .pub-list li { border-left-color: var(--poster); }
+
         .pub-list a { margin-right: 6px; }
     </style>
 </head>
@@ -87,123 +88,110 @@
 
         <!-- ================= Preprints ================= -->
         <section class="pub-section preprint">
-        <h3>Preprints</h3>
-        <ul class="pub-list">
-            <li class="preprint">
-                <span class="tag preprint"><span>Preprint</span></span>
-                <strong>SoK: Privacy-Preserving Order Matching</strong><br>
-                Prerna Arote, Adrian Saiz, Lucianna Kiffer<br>
-                arXiv:2610.12535, 2026 (under review)<br>
-                <a href="https://arxiv.org/abs/2610.12535" target="_blank" rel="noopener">[arXiv]</a>
-                <a href="https://arxiv.org/pdf/2610.12535" target="_blank" rel="noopener">[PDF]</a>
-            </li>
-            <li class="preprint">
-                <span class="tag preprint"><span>Preprint</span></span>
-                <strong>Cryptographic Security Is Not Enough: Privacy Gaps in the Renegade Decentralized Dark Pool</strong><br>
-                Prerna Arote, Adrian Saiz, Oriol Saguillo, Lucianna Kiffer<br>
-                arXiv:2609.27100, 2026 (under review)<br>
-                <a href="https://arxiv.org/abs/2609.27100" target="_blank" rel="noopener">[arXiv]</a>
-                <a href="https://arxiv.org/pdf/2609.27100" target="_blank" rel="noopener">[PDF]</a>
-            </li>
-            <li class="preprint">
-                <span class="tag preprint"><span>Preprint</span></span>
-                <strong>Secure Calibration in High-Assurance IoT: Traceability for Safety Resilience</strong><br>
-                Ryan Shah, Michael McIntee, Shishir Nagaraja, Sahil Bhandary, Prerna Arote, Joy Kuri<br>
-                arXiv:1908.00740, 2019<br>
-                <a href="https://arxiv.org/abs/1908.00740" target="_blank" rel="noopener">[arXiv]</a>
-            </li>
-        </ul>
+            <h3>Preprints</h3>
+            <ul class="pub-list">
+                <li>
+                    <strong>SoK: Privacy-Preserving Order Matching</strong><br>
+                    Prerna Arote, Adrian Saiz, Lucianna Kiffer<br>
+                    arXiv:2610.12535, 2026 (under review)<br>
+                    <a href="https://arxiv.org/abs/2610.12535" target="_blank" rel="noopener">[arXiv]</a>
+                    <a href="https://arxiv.org/pdf/2610.12535" target="_blank" rel="noopener">[PDF]</a>
+                </li>
+                <li>
+                    <strong>Cryptographic Security Is Not Enough: Privacy Gaps in the Renegade Decentralized Dark Pool</strong><br>
+                    Prerna Arote, Adrian Saiz, Oriol Saguillo, Lucianna Kiffer<br>
+                    arXiv:2609.27100, 2026 (under review)<br>
+                    <a href="https://arxiv.org/abs/2609.27100" target="_blank" rel="noopener">[arXiv]</a>
+                    <a href="https://arxiv.org/pdf/2609.27100" target="_blank" rel="noopener">[PDF]</a>
+                </li>
+                <li>
+                    <strong>Secure Calibration in High-Assurance IoT: Traceability for Safety Resilience</strong><br>
+                    Ryan Shah, Michael McIntee, Shishir Nagaraja, Sahil Bhandary, Prerna Arote, Joy Kuri<br>
+                    arXiv:1908.00740, 2019<br>
+                    <a href="https://arxiv.org/abs/1908.00740" target="_blank" rel="noopener">[arXiv]</a>
+                </li>
+            </ul>
         </section>
 
         <!-- ================= Journals ================= -->
         <section class="pub-section journal">
-        <h3>Journal Papers</h3>
-        <ul class="pub-list">
-            <li class="journal">
-                <span class="tag journal"><span>Journal</span></span>
-                <strong>Q_Pay: A Low-Latency Bitcoin Micropayment Protocol for Instant Service Access</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                <em>SN Computer Science</em>, 7(5), 2026<br>
-                <a href="https://doi.org/10.1007/s42979-026-04936-3" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="journal">
-                <span class="tag journal"><span>Journal</span></span>
-                <strong>CommTLC: An Alternative to Reduce the Attack Surface of HTLCs in Lightning Networks</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                <em>IET Blockchain</em>, 5(1), 2025<br>
-                <a href="https://doi.org/10.1049/blc2.70005" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-        </ul>
+            <h3>Journal Papers</h3>
+            <ul class="pub-list">
+                <li>
+                    <strong>Q_Pay: A Low-Latency Bitcoin Micropayment Protocol for Instant Service Access</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    <em>SN Computer Science</em>, 7(5), 2026<br>
+                    <a href="https://doi.org/10.1007/s42979-026-04936-3" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>CommTLC: An Alternative to Reduce the Attack Surface of HTLCs in Lightning Networks</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    <em>IET Blockchain</em>, 5(1), 2025<br>
+                    <a href="https://doi.org/10.1049/blc2.70005" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+            </ul>
         </section>
 
         <!-- ================= Conferences ================= -->
         <section class="pub-section conf">
-        <h3>Conference and Workshop Papers</h3>
-        <ul class="pub-list">
-            <li class="conf">
-                <span class="tag conf"><span>Workshop</span></span>
-                <strong>Mind the Gap: Liquidity Poisoning Attacks on Multihop Cross-Chain Arbitrage</strong><br>
-                Prerna Arote<br>
-                IEEE International Conference on Blockchain and Cryptocurrency (ICBC), Brisbane, Australia, 2026<br>
-                <a href="https://doi.org/10.1109/ICBC67748.2026.11575511" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Conference</span></span>
-                <strong>SC-ToF: A Secure and Reliable Task Offloading Framework for IoT Devices Using Smart Contracts and Edge Computing</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                28th Conference on Innovation in Clouds, Internet and Networks (ICIN), Paris, France, 2025<br>
-                <a href="https://doi.org/10.1109/ICIN64016.2025.10943078" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Conference</span></span>
-                <strong>Detect and Isolate an Adversary in Fakey and Griefing-R Attack on Lightning Network</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                IEEE International Conference on Blockchain (Blockchain), Copenhagen, Denmark, 2024<br>
-                <a href="https://doi.org/10.1109/Blockchain62396.2024.00083" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Conference</span></span>
-                <strong>A Study of Double-Spending Causes and Countermeasures in Bitcoin Network</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                6th International Conference on Blockchain Computing and Applications (BCCA), Dubai, UAE, 2024<br>
-                <a href="https://doi.org/10.1109/BCCA62388.2024.10844413" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Conference</span></span>
-                <strong>ZCC: Mitigating Double-Spending Attacks in Micropayment Bitcoin Transactions</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                4th International Conference on Blockchain Computing and Applications (BCCA), San Antonio, USA, 2022<br>
-                <a href="https://doi.org/10.1109/BCCA55292.2022.9921877" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Workshop</span></span>
-                <strong>Hybrid Decentralized Solution for Bitcoin Zero-Confirmation Transactions</strong><br>
-                Prerna Arote, Joy Kuri<br>
-                Blockchain Workshop, 11th International Conference on Communication Systems &amp; Networks (COMSNETS), Bangalore, India, 2019<br>
-                <a href="https://doi.org/10.1109/COMSNETS.2019.8711462" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-            <li class="conf">
-                <span class="tag conf"><span>Conference</span></span>
-                <strong>Detection and Prevention against ARP Poisoning Attack Using Modified ICMP and Voting</strong><br>
-                Prerna Arote, Karm Veer Arya<br>
-                International Conference on Computational Intelligence and Networks (CINE), 2015<br>
-                <a href="https://doi.org/10.1109/CINE.2015.34" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-        </ul>
+            <h3>Conference and Workshop Papers</h3>
+            <ul class="pub-list">
+                <li>
+                    <strong>Mind the Gap: Liquidity Poisoning Attacks on Multihop Cross-Chain Arbitrage</strong><br>
+                    Prerna Arote<br>
+                    IEEE International Conference on Blockchain and Cryptocurrency (ICBC), Workshop, Brisbane, Australia, 2026<br>
+                    <a href="https://doi.org/10.1109/ICBC67748.2026.11575511" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>SC-ToF: A Secure and Reliable Task Offloading Framework for IoT Devices Using Smart Contracts and Edge Computing</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    28th Conference on Innovation in Clouds, Internet and Networks (ICIN), Paris, France, 2025<br>
+                    <a href="https://doi.org/10.1109/ICIN64016.2025.10943078" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Detect and Isolate an Adversary in Fakey and Griefing-R Attack on Lightning Network</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    IEEE International Conference on Blockchain (Blockchain), Copenhagen, Denmark, 2024<br>
+                    <a href="https://doi.org/10.1109/Blockchain62396.2024.00083" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>A Study of Double-Spending Causes and Countermeasures in Bitcoin Network</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    6th International Conference on Blockchain Computing and Applications (BCCA), Dubai, UAE, 2024<br>
+                    <a href="https://doi.org/10.1109/BCCA62388.2024.10844413" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>ZCC: Mitigating Double-Spending Attacks in Micropayment Bitcoin Transactions</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    4th International Conference on Blockchain Computing and Applications (BCCA), San Antonio, USA, 2022<br>
+                    <a href="https://doi.org/10.1109/BCCA55292.2022.9921877" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Hybrid Decentralized Solution for Bitcoin Zero-Confirmation Transactions</strong><br>
+                    Prerna Arote, Joy Kuri<br>
+                    Blockchain Workshop, 11th International Conference on Communication Systems &amp; Networks (COMSNETS), Bangalore, India, 2019<br>
+                    <a href="https://doi.org/10.1109/COMSNETS.2019.8711462" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Detection and Prevention against ARP Poisoning Attack Using Modified ICMP and Voting</strong><br>
+                    Prerna Arote, Karm Veer Arya<br>
+                    International Conference on Computational Intelligence and Networks (CINE), 2015<br>
+                    <a href="https://doi.org/10.1109/CINE.2015.34" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+            </ul>
         </section>
 
         <!-- ================= Posters ================= -->
         <section class="pub-section poster">
-        <h3>Posters</h3>
-        <ul class="pub-list">
-            <li class="poster">
-                <span class="tag poster"><span>Poster</span></span>
-                <strong>Breaking Sandwich MEV in ERC-20 DeFi via Context-Aware Directional Constraints</strong><br>
-                Prerna Arote<br>
-                IEEE International Conference on Blockchain and Cryptocurrency (ICBC), Brisbane, Australia, 2026<br>
-                <a href="https://doi.org/10.1109/ICBC67748.2026.11575509" target="_blank" rel="noopener">[DOI]</a>
-            </li>
-        </ul>
+            <h3>Posters</h3>
+            <ul class="pub-list">
+                <li>
+                    <strong>Breaking Sandwich MEV in ERC-20 DeFi via Context-Aware Directional Constraints</strong><br>
+                    Prerna Arote<br>
+                    IEEE International Conference on Blockchain and Cryptocurrency (ICBC), Brisbane, Australia, 2026<br>
+                    <a href="https://doi.org/10.1109/ICBC67748.2026.11575509" target="_blank" rel="noopener">[DOI]</a>
+                </li>
+            </ul>
         </section>
 
     </main>
